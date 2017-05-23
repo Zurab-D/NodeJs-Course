@@ -1,0 +1,142 @@
+I want to combine the count of two different checkbox groups and come up with the total number of checkboxes between the them. I have attached the script with the example.  
+
+
+<%@ Page Language="C#" %>
+<%@ Import Namespace="System.Data"%>
+<script runat="server">
+    public void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+        {
+                DataTable dt = new DataTable("EmpGroup");
+                dt.Columns.Add("NumGroup", typeof(string));
+                dt.Columns.Add("EmpName", typeof(string));
+                dt.Rows.Add("1","Dan");
+                dt.Rows.Add("2","Joe");
+                dt.Rows.Add("3","Mark");
+                dt.Rows.Add("4","John");
+                dt.Rows.Add("5","Skip");
+                dt.Rows.Add("6","Dave");
+                dt.Rows.Add("7","Greg");
+                dt.Rows.Add("8","Lou");
+                dt.Rows.Add("9","Bill");
+                dt.Rows.Add("10","Tammy");
+                dt.Rows.Add("11","Mike");
+
+                myRepeater.DataSource = dt;
+                myRepeater.DataBind();
+
+                DataTable dt1 = new DataTable("Dept");
+                dt1.Columns.Add("DeptGroup", typeof(string));
+                dt1.Columns.Add("DeptName", typeof(string));
+                dt1.Rows.Add("1","IT");
+                dt1.Rows.Add("2","HR");
+                dt1.Rows.Add("3","Fiscal");
+                dt1.Rows.Add("4","Nursing");
+                dt1.Rows.Add("5","Public Relations");
+                dt1.Rows.Add("6","Admin");
+                dt1.Rows.Add("7","Maintenance");
+
+                myRepeater1.DataSource = dt1;
+                myRepeater1.DataBind();
+        }
+    }
+</script>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta charset="utf-8" />
+    <title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var countTotal = 0;
+            $('input[name="chkSelect"]').click(function () {
+                updateNumber('chkSelect');
+            });
+
+            $('input[name="chkSelect1"]').click(function () {
+                updateNumber1('chkSelect1');
+            });
+
+            var updateNumber = function () {
+                var result = $('input[name="chkSelect"]:checked');
+                var cnt = 0;
+                var countedgroupno = [];
+                result.each(function () {
+                var group = $(this).attr('group');
+                var lastletter = group.substr(group.length-1, 1);
+				if(lastletter.match(/[a-z]/i)) {
+					group = group.substring(0, group.length-1);
+				}
+                    if ($.inArray(group, countedgroupno) == -1) {
+                        cnt++;
+                        countedgroupno.push(group);
+                    }
+                });
+                $('#countCK').val(cnt);
+            };
+
+            var updateNumber1 = function () {
+                var result = $('input[name="chkSelect1"]:checked');
+                var cnt1 = 0;
+                var countedgroupno = [];
+                result.each(function () {
+                    var group = $(this).attr('group');
+                    var lastletter = group.substr(group.length - 1, 1);
+                    if (lastletter.match(/[a-z]/i)) {
+                        group = group.substring(0, group.length - 1);
+                    }
+                    if ($.inArray(group, countedgroupno) == -1) {
+                        cnt1++;
+                        countedgroupno.push(group);
+                    }
+                });
+                $('#countCK1').val(cnt1);
+            };
+            countTotal = cnt * cnt1;
+            $('#valueResult').val(countTotal);
+        });
+    </script>    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <label for="valueResult">Value Result:</label>
+        <input type="text" id="valueResult" size="20"  />
+        <br />
+        <hr />
+        <input type="text" id="countCK" size="20"  />
+        <br />
+      <asp:Repeater ID="myRepeater" runat="server">
+        <HeaderTemplate>
+            <table style="height: 75px; width: 400px">
+        </HeaderTemplate>
+        <ItemTemplate>
+            <label><%# Eval("EmpName") %></label>
+            <input type="checkbox" name="chkSelect" value='<%# Eval("NumGroup") %>' group='<%# Eval("NumGroup") %>'/>
+            <br />     
+        </ItemTemplate>
+        <FooterTemplate>
+            </table>
+        </FooterTemplate> 
+       </asp:Repeater> 
+        <br />
+        <hr />
+        <input type="text" id="countCK1" size="20"  />
+        <br />
+      <asp:Repeater ID="myRepeater1" runat="server">
+        <HeaderTemplate>
+            <table style="height: 75px; width: 400px">
+        </HeaderTemplate>
+        <ItemTemplate>
+            <label><%# Eval("DeptName") %></label>
+            <input type="checkbox" name="chkSelect1" value='<%# Eval("DeptGroup") %>' group='<%# Eval("DeptGroup") %>'/>
+            <br />     
+        </ItemTemplate>
+        <FooterTemplate>
+            </table>
+        </FooterTemplate> 
+       </asp:Repeater>                   
+    </form>
+</body>
+</html>

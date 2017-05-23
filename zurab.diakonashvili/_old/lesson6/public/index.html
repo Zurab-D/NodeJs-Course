@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <ul>
+        <li><a href="/users">Get all users</a></li>
+        <li><a href="/users/mary1@mail.com">Get user mary1@mail.com</a></li>
+        <li><form id="post">
+            <input type="text" name="email"/>
+            <input type="submit" value="Create user"/>
+        </form></li>
+        <li><form id="del">
+            <input type="text" name="email"/>
+            <input type="submit" value="Remove user"/>
+        </form></li>
+    </ul>
+
+    <script>
+        post.onsubmit = function(evt) {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("POST", "/users", true);
+
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+            xhr.send(JSON.stringify({email: this.elements.email.value}));
+
+            this.elements.email.value = '';
+
+            return false;
+        };
+
+        del.onsubmit = function() {
+            var xhr = new XMLHttpRequest();
+
+            xhr.open("DELETE", "/users/"+this.elements.email.value, true);
+
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+            xhr.send();
+
+            this.elements.email.value = '';
+
+            return false;
+        };
+
+    </script>
+</body>
+</html>

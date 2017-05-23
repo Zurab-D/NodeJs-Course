@@ -1,0 +1,20 @@
+.container {
+  margin: auto;
+  width: 600px;
+}
+
+[data-status="error"],
+[data-status="disconnect"],
+[data-status="reconnect_failed"] {
+  color: red;
+}
+
+[data-status="connect"] {
+  color: green;
+}
+
+[data-status="reconnect"],
+[data-status="reconnecting"] {
+  color: blue;
+}
+

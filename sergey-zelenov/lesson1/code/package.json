@@ -1,0 +1,13 @@
+{
+  "name": "sergey-zelenov",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_PATH=./handlers:./modules node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

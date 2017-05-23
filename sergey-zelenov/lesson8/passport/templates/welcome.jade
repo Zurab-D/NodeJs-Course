@@ -1,0 +1,15 @@
+doctype html
+html
+
+  head
+    title Welcome
+    link(rel="icon" href="http://learn.javascript.ru/img/favicon/favicon.png")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/style.css")
+
+  body
+    .container
+      h1 Welcome #{user.displayName}
+      
+      form(action="/logout" method="post")
+        button.btn.btn-lg.btn-primary.btn-block Logout

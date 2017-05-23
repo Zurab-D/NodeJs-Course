@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.8/es5-shim.min.js"></script>
+  <![endif]-->
+</head>
+
+<body style="padding: 1%;">
+  <h4>This is delete.html</h4><br>
+  <form class="form-inline" action="/api/users" method="post">
+    <label class="control-label" for="input">Enter user object id</label>
+    <input class="form-control" id="iserObjectId" name="iserObjectId" type="text"></input>
+    <button class="btn btn-default" id="button">Delete</button>
+  </form>
+
+  <script>
+    document.onsubmit = (event) => {
+      event.preventDefault();
+
+      let xhr = new XMLHttpRequest();
+      xhr.open('DELETE', '/api/users/' + iserObjectId.value, true);
+      xhr.send();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState != 4) return;
+
+        button.innerHTML = 'Готово!';
+
+        if (xhr.status != 200) {
+            alert(xhr.status + ': ' + xhr.statusText);
+        } else {
+            alert(xhr.responseText);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

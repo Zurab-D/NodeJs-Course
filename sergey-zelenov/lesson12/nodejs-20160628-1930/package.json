@@ -1,0 +1,53 @@
+{
+  "name": "nodejs-20160628-1930",
+  "version": "1.0.0",
+  "description": "simple node.js application",
+  "main": "index.js",
+  "engines": {
+    "node": "6.3.1"
+  },
+  "scripts": {
+    "start": "NODE_PATH=./handlers:./modules gulp nodemon",
+    "test": "NODE_ENV=test NODE_PATH=./handlers:./modules mocha --opts test/mocha.opts -d $*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tadjik1/nodejs-20160628-1930.git"
+  },
+  "author": "Sergey Zelenov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tadjik1/nodejs-20160628-1930/issues"
+  },
+  "homepage": "https://github.com/tadjik1/nodejs-20160628-1930#readme",
+  "dependencies": {
+    "config": "^1.21.0",
+    "jade": "^1.11.0",
+    "koa": "^1.2.1",
+    "koa-bodyparser": "^2.2.0",
+    "koa-favicon": "^1.2.1",
+    "koa-generic-session": "^1.11.3",
+    "koa-logger": "^1.3.0",
+    "koa-mount": "^1.3.0",
+    "koa-passport": "^1.3.1",
+    "koa-router": "^5.4.0",
+    "koa-session-mongoose": "^1.0.0",
+    "koa-static": "^2.0.0",
+    "lodash": "^4.14.2",
+    "mongoose": "^4.5.8",
+    "passport-local": "^1.0.0",
+    "redis": "^2.6.2",
+    "socket.io": "^1.4.8",
+    "socket.io-emitter": "^1.0.0",
+    "socket.io-redis": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "co-mocha": "^1.1.3",
+    "co-request": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.1.0",
+    "mocha": "^3.0.2",
+    "run-sequence": "^1.2.2"
+  }
+}

@@ -1,0 +1,25 @@
+doctype html
+html
+
+  head
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/style.css")
+
+  body
+    .container
+
+      form(action="/login" method="post")
+        h1 Please sign in
+
+        if flash && flash.error
+          .alert.alert-danger= flash.error
+
+
+        .form-group
+          label(for="email") Email
+          input.form-control(type="email" id="email" name="email" placeholder="my@mail.com" value="petya@javascript.ru" required autofocus)
+        .form-group
+          label(for="password") Password
+          input.form-control(type="password" id="password" name="password" required value="123456")
+
+        button.btn.btn-lg.btn-primary.btn-block(type="submit") Login

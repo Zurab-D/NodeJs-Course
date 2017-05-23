@@ -1,0 +1,8 @@
+1. Unit-тесты
+  sinon
+
+2. Интеграционные
+3. E2E End-to-end (Selenium, CasperJS, ZombieJS)
+4. Юзабилити (A/B)
+5. Нагрузочное (wrk, siege) gatling(sic!)
+6. Мутационные

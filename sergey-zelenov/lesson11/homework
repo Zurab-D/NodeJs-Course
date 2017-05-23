@@ -1,0 +1,9 @@
+1. почитать: jade, bem, hmvc
+  https://github.com/iliakan/javascript-nodejs
+
+2. рефакторинг существующего проекта с использованием HMVC
+  (разбить на модули)
+
+3. lazy loading modules (при dev) - попробовать реализовать
+
+4. подготовить список вопросов по курсу и/или по Node.js

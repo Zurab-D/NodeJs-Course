@@ -1,0 +1,20 @@
+- https://github.com/koajs/csrf
+- https://github.com/nodemailer/nodemailer
+
+
+Mailers:
+  - https://aws.amazon.com/ru/ses
+    + https://github.com/andris9/nodemailer-ses-transport
+    + https://aws.amazon.com/ru/sns
+      * Пример: -javascript-nodejs-master\modules\mailer\lib\statusService.js
+
+  - https://www.mandrill.com
+
+
+User verificator:
+  - https://get.digits.com
+
+
+Errors management:
+  - https://bugsnag.com
+

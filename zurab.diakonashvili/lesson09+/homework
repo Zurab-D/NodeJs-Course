@@ -1,0 +1,5 @@
++ 0. application (login, registration) vk, local, facebook
+
++ 1. CSRF /logout
++ 2. Email confirmation /registration (Gmail)
+    unverified user /login - 403 forbidden

@@ -1,0 +1,48 @@
+doctype html
+html
+
+  head
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css")
+    link(rel="stylesheet" href="/style.css")
+
+    //- @see https://github.com/Automattic/socket.io-client
+    script(src="/socket.io/socket.io.js")
+
+    script.
+      var socket = io();
+
+      function showStatus(status, message) {
+        document.querySelector('[data-status]').innerHTML = message || status;
+        document.querySelector('[data-status]').setAttribute('data-status', status);
+      }
+
+      socket
+        .on('error', message => {
+          console.error(message);
+          showStatus('error', message);
+        });
+
+      'connect disconnect reconnect reconnecting reconnect_failed'.split(' ').forEach(event => {
+        socket.on(event, () => {
+          showStatus(event);
+        });
+      });
+
+      socket.on('logout', data => {
+        socket.disconnect();
+        //- alert('You logged out');
+        window.location.reload();
+      })
+      socket.on('message', (...data) => {
+        console.log(data);
+        socket.emit('my other event', {my: 'data'});
+      });
+
+  body
+    .container
+      h1
+        | Chat
+        .label(data-status)
+        
+      form(method="POST" action="/logout" onsubmit="socket.disconnect()")
+        button.btn.btn-lg.btn-primary.btn-block(type="submit") Logout

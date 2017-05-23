@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "",
+    "test": "mocha index-test.js",
+    "test:watch": "mocha --opts test/mocha.opts --watch **-test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

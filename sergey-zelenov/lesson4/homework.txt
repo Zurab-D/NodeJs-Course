@@ -1,0 +1,8 @@
+// learn.javascript.ru
+1. Promises https://learn.javascript.ru/promise
+2. Generators https://learn.javascript.ru/generator
+
+Используя промисы и генераторы (через co). https://github.com/tj/co
+Используя mz/fs прочитать все файлы из директории (последовательно или параллельно),
+вывести длину содержимого (общую длину текста).
+(!)Все файлы текстовые.

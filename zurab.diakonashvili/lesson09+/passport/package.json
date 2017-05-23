@@ -1,0 +1,12 @@
+{
+  "name": "lesson6--chat",
+  "version": "1.0.0",
+  "description": "Lesson8 - koa-passport",
+  "author": "zurab-d",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "go.cmd",
+    "test": "grunt linter"
+  }
+}

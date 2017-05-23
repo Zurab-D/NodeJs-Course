@@ -1,0 +1,15 @@
+{
+  "name": "get-post-server-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test.bat",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "run.js",
+  "scripts": {
+    "test-SZ": "NODE_ENV=test mocha --opts test/mocha.opts **-test.js",
+    "test": "test.bat",
+    "test:watch": "NODE_ENV=test mocha --opts test/mocha.opts --watch **-test.js",
+    "start": "node run.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

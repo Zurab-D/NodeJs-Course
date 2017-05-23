@@ -1,0 +1,19 @@
+REST API
+
+koa + mongoose (mongodb)
+
+user
+  email: string
+
+/api/users (JSON)
+
+GET /users - список пользователей
+GET /users/:id - пользователя (404)
+
+POST /users - создавать пользователя (400) {email: ''}
+
+DELETE /users/:id - удаление пользователя
+
++ тесты
+co-mocha
+request-promise

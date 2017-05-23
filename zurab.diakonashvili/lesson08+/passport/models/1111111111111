@@ -1,0 +1,9 @@
+{
+"_id"          : ObjectId("57b186f69aa41a0012f45103"),
+"displayName"  : "Petya",
+"email"        : "petya@javascript.ru",
+"passwordHash" : "4n8NLw5TAcsPV5OWyman0Yj9m0TTwDaaB+Cau8YjdCMiABEPb85K3a5pzHDxOEOkz8hctAuwS+U3U/1zLCGB5yBKesyOquuej/yb9fvjtdlFQh/wqQ5Nb1M5hgKHWFonqparfetf9yheL3ID5u76zFWX/1RDBI6s4u0o+LPE/tE=",
+"salt"         : "DHBdOhTxXAG9WJu1dzskCWS33KjJmWgfq3MJSAn+G4mnoJu4yEx0IsUq47dQQYqnWLztj9vAAwBmvuiZghIyg/MBGIwJz1kkmK/D74of9MGN6bzoh9VAaPwY1YRKi9y3akI3Kt7gMU2UjORjzDB4ez5mnKW0fssi5G6vcAmTnxc=",
+"created"      : ISODate("2016-08-15T09:10:14.200Z"),
+"__v"          : 0
+}

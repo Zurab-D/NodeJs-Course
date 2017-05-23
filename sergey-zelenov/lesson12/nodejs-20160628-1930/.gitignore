@@ -1,0 +1,25 @@
+# NPM packages folder.
+node_modules/
+
+
+# OS or Editor folders
+.DS_Store
+.idea
+.cache
+.project
+.settings
+.tmproj
+.nvmrc
+sftp-config.json
+Thumbs.db
+
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
